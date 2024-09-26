@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  body {
+    background: linear-gradient(to right, #141e30, #243b55);
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00ffd1;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Film List Styles */
+  .film-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .film-item {
+    display: flex;
+    align-items: center;
+    background-color: #1c2833;
+    padding: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+  }
+
+  .film-item:hover {
+    background-color: #2e4053;
+  }
+
+  .film-item img,
+  .timeline-item img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+
+  .film-info {
+    color: #e5e8e8;
+  }
+
+  .film-info h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .film-info p {
+    color: #aab7b8;
+  }
+
+  .btn {
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-align: center;
+    color: #00ffd1;
+    background-color: #0e6655;
+    transition: background-color 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #148f77;
+  }
+
+  .btn-red {
+    color: #f1948a;
+  }
+
+  /* Jadwal Tayang Styles */
+  .timeline {
+    position: relative;
+    border-left: 4px solid #00ffd1;
+    padding-left: 20px;
+    margin-left: 20px;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    background-color: #1c2833;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -11px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    background-color: #00ffd1;
+    border: 4px solid #1c2833;
+    border-radius: 50%;
+  }
+
+  .timeline-item h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #00ffd1;
+    margin-bottom: 10px;
+  }
+
+  .timeline-item p {
+    color: #aab7b8;
+  }
+
+  /* Flip Cards Styles for Tiket */
+  .flip-card {
+    perspective: 1000px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #1c2833;
+    color: #e5e8e8;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+
+  .flip-card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flip-card-front img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .flip-card-back h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}
